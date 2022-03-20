@@ -2,6 +2,10 @@
 
 
 
+\r _utils/constants/const_string.gp
+
+
+
 logR(x) =
 {
    my(a = log(x));
@@ -52,7 +56,7 @@ nDensity(n) =
    my(
       M = vector(10, x, 0),
       S = Vec(Str(n)),
-      L = n.length*1.0
+      L = #Str(n)
    );
 
    for(i = 1, L,
@@ -83,17 +87,17 @@ fromGray(n)=my(k=1,m=n);while(m>>k,n=bitxor(n,n>>k);k+=k);n;
 
 toBase(numb1, b1, b2) =
 {
-  my(B = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];, a = 0, c = "");
+  my(a = 0, c = "");
   numb1 = Vec(Str(numb1));
   forstep(y = #numb1, 1, -1,
     for(x = 1, b1,
-      if(numb1[y] == B[x],
-        a = a + (x - 1)*b1^(#numb1 - y); \\ turns the number to decimal
+      if(numb1[y] == BaseDigitSet[x],
+        a = a + (x - 1)*b1^(#numb1 - y); \\ turns the number into decimal
       )
     )
   );
   until(a/b2 == 0,
-    c = concat(B[a%b2 + 1], c); \\ turns the number to the given base
+    c = concat(BaseDigitSet[a%b2 + 1], c); \\ turns the number into the given base
     a = a\b2;
   );
   return(c);
