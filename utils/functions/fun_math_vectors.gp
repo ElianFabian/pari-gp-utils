@@ -26,7 +26,7 @@ vnorm(u) = sqrt( sum(i = 1, #u, u[i]^2) );
 addhelp(vnorm, "vnorm(u): returns the magnitude of the given vector.");
 
 vnormalize(v) = v/vnorm(v);
-addhelp(vnormalize, "vnormalize: returns the normalize vector from the given vector.");
+addhelp(vnormalize, "vnormalize: returns the normalized vector from the given vector.");
 
 vdot(u,v) = sum(i=1,#u,u[i]*v[i]);
 addhelp(vdot, "vdot(u,v): returns the dot product of the given vectors")
