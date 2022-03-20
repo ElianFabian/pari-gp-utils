@@ -2,21 +2,21 @@
 
 
 
-V2D_ZERO  = [0, 0];
-V2D_ONE   = [1, 1];
-V2D_RIGHT = [1, 0];
-V2D_LEFT  = [-1, 0];
-V2D_UP    = [0, 1];
-V2D_DOWN  = [0, -1];
+V2_ZERO  = [0, 0];
+V2_ONE   = [1, 1];
+V2_RIGHT = [1, 0];
+V2_LEFT  = [-1, 0];
+V2_UP    = [0, 1];
+V2_DOWN  = [0, -1];
 
-V_ZERO    = [0, 0, 0];
-V_ONE     = [1, 1, 1];
-V_RIGHT   = [1, 0, 0];
-V_LEFT    = [-1, 0, 0];
-V_UP      = [0, 1, 0];
-V_DOWN    = [0, -1, 0];
-V_FORWARD = [0, 0, 1];
-V_BACK    = [0, 0, 1];
+V3_ZERO    = [0, 0, 0];
+V3_ONE     = [1, 1, 1];
+V3_RIGHT   = [1, 0, 0];
+V3_LEFT    = [-1, 0, 0];
+V3_UP      = [0, 1, 0];
+V3_DOWN    = [0, -1, 0];
+V3_FORWARD = [0, 0, 1];
+V3_BACK    = [0, 0, 1];
 
 v.x = v[1];
 v.y = v[2];
