@@ -47,8 +47,10 @@ t.clamp       = (a, b)           -> clamp      (t, a, b);
 
 n.toBase = (b1, b2) -> toBase(n, b1, b2);
 
-u.vdot   = (v) -> vdot  (u, v);
-u.vcross = (v) -> vcross(u, v);
+u.vdot    = (v) -> vdot   (u, v);
+u.vcross  = (v) -> vcross (u, v);
+u.vdist   = (v) -> vdist  (u, v)
+u.vdistSq = (v) -> vdistSq(u, v)
 
 z.rotate = (angle) -> rotate(z, angle);
 
@@ -64,4 +66,4 @@ f.scalef             = (t, {k})           -> scalef            (f, t, k);
 f.translatef         = (t, {x}, {y})      -> translatef        (f, t, x, y);
 f.scaleAndTranslatef = (t, {k}, {x}, {y}) -> scaleAndTranslatef(f, t, k, x, y);
 
-M.mloop = (expr) -> foreachMap(M, expr);
+M.mforeach = (expr) -> foreachMap(M, expr);
