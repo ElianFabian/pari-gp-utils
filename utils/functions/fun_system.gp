@@ -1,6 +1,6 @@
 switch(x, valuesAndCode[..]) =
 {
-    for(i = 1, floor(#valuesAndCode / 2),
+    for (i = 1, floor(#valuesAndCode / 2),
 
         my(j = i * 2 - 1);
 
