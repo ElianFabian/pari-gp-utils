@@ -1,6 +1,7 @@
 \\ _init_functions.gp
 
 
+\r _init_functions/fun_system.gp
 
 \r _utils/functions/fun_strings.gp
 \r _utils/functions/fun_console.gp
@@ -13,7 +14,7 @@
 \r _utils/functions/fun_math_complexNumbers.gp
 \r _utils/functions/fun_math_points.gp
 \r _utils/functions/fun_math_linearInterpolation.gp
-\r _utils/functions/fun_math_quaternions
+\r _utils/functions/fun_math_quaternions.gp
 
 \r _utils/functions/fun_time.gp
 \r _utils/functions/fun_logicGates.gp
