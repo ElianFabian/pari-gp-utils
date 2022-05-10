@@ -8,7 +8,7 @@ addhelp(createFolder, "createFolder(filename): creates a folder with the given n
 
 deleteFolder(foldername, recursive = 0) =
 {
-   my(str = " ");
+   my (str = " ");
    if (recursive, str = " /s /q ");
 
    if( fileExists(foldername), system(Str("rm" str, foldername)) );
@@ -17,11 +17,11 @@ addhelp(deleteFolder, "deleteFolder(filename, {recursive = 0}): deletes the give
 
 createFile(text, mode = "w", filename = "text.txt", Folder = "Texts") =
 {
-   my(path = Str(Folder, "/", filename));
+   my (path = Str(Folder, "/", filename));
    createFolder(Folder);
    write(path);
 
-   my(file = fileopen(path, mode));
+   my (file = fileopen(path, mode));
    filewrite(file, text);
    fileclose(file);
 }
