@@ -8,46 +8,48 @@
 
 logR(x) =
 {
-   my(a = log(x));
-   while(log(a)>0, a = log(a));
+   my (a = log(x));
+   while (log(a)>0, a = log(a));
+
    return(a);
 }
 addhelp(logR, "logR(x): applies the log recursively until the output is negative.");
 
 slog(x, {b = 2}) =
 {
-   my(cont = 1, n = x);
-   if(x <= 1, return(0));
-   while(n > b, n = log(n)/log(b); cont++);
+   my (cont = 1, n = x);
+   if (x <= 1, return(0));
+   while (n > b, n = log(n)/log(b); cont++);
 
-   return(cont);
+   return (cont);
 }
 addhelp(slog, "slog(x, {b = 2}): returns the superlogarithm of any given integer.");
 
-sumdigitsR(n, {b = 10}) =
+sumDigitsR(n, {b = 10}) =
 {
-   my(a = sumdigits(n, b));
-   while(a >= 10, a = sumdigits(a, b));
-   return(a);
+   my (a = sumdigits(n, b));
+   while (a >= 10, a = sumdigits(a, b));
+   return (a);
 }
-addhelp(sumdigitsR, "sumdigitsR(n, {b = 10}): returns the recursive sum of the digits of the given number.");
+addhelp(sumDigitsR, "sumDigitsR(n, {b = 10}): returns the recursive sum of the digits of the given number.");
 
-sumReciprocalPrimes(n) =
+sumOfReciprocalPrimes(n) =
 {
-   my(Sum = 0);
-      for(i = 1, n, Sum += 1.0/prime(i););
-   return(Sum);
+   my (sum = 0);
+   for (i = 1, n, sum += 1.0/prime(i););
+
+   return (sum);
 }
-addhelp(sumReciprocalPrimes, "sumReciprocalPrimes(n): returns the sum of the reciprocal of prime numbers: 1/2 + 1/3 + 1/5 + ... + 1/p");
+addhelp(sumOfReciprocalPrimes, "sumOfReciprocalPrimes(n): returns the sum of the reciprocal of prime numbers: 1/2 + 1/3 + 1/5 + ... + 1/p");
 
 Zn(n) = (1-(-1)^n*(2*n+1))/4;
 addhelp(Zn, "Zn(n): relates the natural number and the integers (with 0 as a natural): 0, 1, -1, 2, -2...");
 
 tetration(b, n) =
 {
-   my(z = b);
-   for(i = 1, n - 1, z = b^z);
-   return(z);
+   my (z = b);
+   for (i = 1, n - 1, z = b^z);
+   return (z);
 }
 addhelp(tetration, "tetration(b, n): returns the tetration in base b of n.");
 
@@ -59,8 +61,8 @@ nDensity(n) =
       L = #Str(n)
    );
 
-   for(i = 1, L,
-      if(S[i] == "0", M[1]++,
+   for (i = 1, L,
+      if (S[i] == "0", M[1]++,
          S[i] == "1", M[2]++,
          S[i] == "2", M[3]++,
          S[i] == "3", M[4]++,
@@ -74,7 +76,7 @@ nDensity(n) =
 
    M = M/L;
 
-   return(M);
+   return (M);
 }
 addhelp(nDensity, "nDensity(n): returns the porcentage of every digit of the given number.");
 
@@ -85,14 +87,14 @@ toRadians(angle) = angle/360 * 2*Pi;
 toGray(n)=bitxor(n,n>>1);
 fromGray(n)=my(k=1,m=n);while(m>>k,n=bitxor(n,n>>k);k+=k);n;
 
-toBase(numb1, b1, b2) =
+toBase(n, b1, b2) =
 {
-  my(a = 0, c = "");
-  numb1 = Vec(Str(numb1));
-  forstep(y = #numb1, 1, -1,
-    for(x = 1, b1,
-      if(numb1[y] == BaseDigitSet[x],
-        a = a + (x - 1)*b1^(#numb1 - y); \\ turns the number into decimal
+  my (a = 0, c = "");
+  n = Vec(Str(n));
+  forstep (y = #n, 1, -1,
+    for (x = 1, b1,
+      if (n[y] == BaseDigitSet[x],
+        a = a + (x - 1)*b1^(#n - y); \\ turns the number into decimal
       )
     )
   );
@@ -107,9 +109,9 @@ addhelp(toBase, "toBase(numb1, b1, b2): turns a number from a given base to anot
 truthTable(P) =
 {
     my(var = variables(P), t, b);
-    for(i = 0, 2^#var - 1 ,
+    for (i = 0, 2^#var - 1 ,
         t = eval(P);
-        for(j = 0, #var - 1,
+        for (j = 0, #var - 1,
             b = bittest(i, j);
             t = subst(t, var[j + 1], b);
             print1(b)
@@ -122,10 +124,10 @@ addhelp(truthTable, "truthTable(P): returns the truth table of the given express
 isPalindrome(s) =
 {
   s = Vec(Str(s));
-  for(i = 1, #s\2,
-    if(s[i] != s[#s - i + 1], return(0))
+  for (i = 1, #s\2,
+    if (s[i] != s[#s - i + 1], return(0))
   );
-  return(1);
+  return (1);
 }
 
 v.toFloat = apply(x -> x*1.0, v);
@@ -133,7 +135,7 @@ v.toFloat = apply(x -> x*1.0, v);
 
 recurrencef(f, a, t, n) =
 {
-   for(i = 1, n, t = f(a, t));
+   for (i = 1, n, t = f(a, t));
    return (t);
 }
 addhelp(recurrencef, "recurrencef(f, a, t, n): given a recurrence function f, the parameter a and the initial aproximation t, it returns the nth aproximation of the value we want to calculate.")
