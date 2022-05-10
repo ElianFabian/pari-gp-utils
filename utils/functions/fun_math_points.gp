@@ -4,8 +4,8 @@
 
 points(a, b, f, s = 1) =
 {
-   my( pointsVec = Vec(0, floor((b - a)/s) + 1) );
-   my(j = 1);
+   my ( pointsVec = Vec(0, floor((b - a)/s) + 1) );
+   my (j = 1);
    forstep (i = a, b, s,
 
       pointsVec[j] = [i, f(i)];
@@ -17,7 +17,7 @@ addhelp(points, "points(a, b, f, {s = 1}): returns a vector of points from range
 
 pointsToString(points) =
 {
-   my(str = "");
+   my (str = "");
    foreach (points, p,
 
       str = concat(str, Str("("p[1]", "p[2]")""\n"))
@@ -28,8 +28,8 @@ addhelp(pointsToString, "pointsToString(points): returns a string with the point
 
 pointsFile(a, b, f, {s = 1}, mode = "w", filename = "points.txt", Folder = "Points") =
 {
-   my(j, points = "", file);
-   my(interval = (b - a)/s);
+   my (j, points = "", file);
+   my (interval = (b - a)/s);
 
    for (i = 0, interval,
       j = a + i*s; points = concat(points, Str("("j", "f(j)")""\n")); \\"(j, f(j))"
@@ -40,8 +40,8 @@ addhelp(pointsFile, "pointsFile(a, b, f, {s = 1}, {mode = 'w'}, {filename = 'poi
 
 pointIntersection(x0, f, g, digitPosition = 1, precision = 10) =
 {
-   my([i, result, n] = [10^-digitPosition, x0, 0]);
-   my(funs(a, b) = [f(a), g(b)]);
+   my ([i, result, n] = [10^-digitPosition, x0, 0]);
+   my (funs(a, b) = [f(a), g(b)]);
 
    if ( f(x0-i/10) - g(x0-i/10) < 0, funs(a, b) = [g(a), f(b)] );
    while (n < precision,
