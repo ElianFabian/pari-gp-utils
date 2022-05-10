@@ -2,12 +2,12 @@
 
 
 
-sleep(time, {mode = "ms"}) =
+sleep(milliseconds) =
 {
    my(t0 = getwalltime());
-   while(getwalltime() < time + t0,);
+   while(getwalltime() < milliseconds + t0,);
 };
-addhelp(sleep, "sleep(time, {mode = 'ms'}): stops the program the number of milliseconds given.");
+addhelp(sleep, "sleep(milliseconds): stops the program the number of milliseconds given.");
 
 time_date() =
 {
