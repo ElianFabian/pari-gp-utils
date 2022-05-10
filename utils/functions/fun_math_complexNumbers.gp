@@ -4,7 +4,7 @@
 
 rotate(z, angle) =
 {
-    my(v = [norm(z), arg(z)]);
+    my (v = [norm(z), arg(z)]);
     v[2] += angle;
 
     return( v[1]*(cos(v[2]) + I*sin(v[2])) );
