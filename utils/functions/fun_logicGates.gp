@@ -6,9 +6,9 @@ not(bit) =
 {
    if (type(bit) == "t_INT" || type(bit) == "t_STR",
 
-      if(bit == 0 || bit == 1, return(!bit));
+      if (bit == 0 || bit == 1, return(!bit));
 
-      return(eval( strjoin(not(eval( Vec(Str(bit)) ))) ));
+      return (eval( strjoin(not(eval( Vec(Str(bit)) ))) ));
    );
    bit = apply((b) -> !eval(b), bit);
    return (bit);
@@ -17,7 +17,7 @@ addhelp(not, "not(bit): applies the negation gate to the given bit/bits/vector/m
 
 or(bits[..]) =
 {
-   my(b1 = eval(bits[1]));
+   my (b1 = eval(bits[1]));
 
    if ( type(b1) == "t_VEC", bits = b1 ); \\ If a vector is given bits is set to that vector
 
@@ -25,7 +25,7 @@ or(bits[..]) =
 
    if (bits == 2 && type(b1) == "t_INT" && type(b2) == "t_INT",
 
-      return( bitor(b1, b2) );
+      return (bitor(b1, b2));
    );
    foreach ( bits, bit, if (bit == 1, return(1)) );
    return (0);
@@ -34,11 +34,11 @@ addhelp(or, "or(bits[..]): applies the OR the given bits, bit vector, undefined 
 
 and(bits[..]) =
 {
-   my(b1 = eval(bits[1]));
+   my (b1 = eval(bits[1]));
 
    if ( type(b1) == "t_VEC", bits = b1 ); \\ If a vector is given bits is set to that vector
 
-   my(b2 = eval(bits[2]));
+   my (b2 = eval(bits[2]));
 
    if (bits == 2 && type(b1) == "t_INT" && type(b2) == "t_INT",
 
@@ -51,7 +51,7 @@ addhelp(and, "and(bits[..]): applies the AND the given bits, bit vector, undefin
 
 xor(bits[..]) =
 {
-   my(b1 = eval(bits[1]));
+   my (b1 = eval(bits[1]));
 
    if ( type(b1) == "t_VEC", bits = b1 ); \\ If a vector is given bits is set to that vector
 
@@ -61,7 +61,7 @@ xor(bits[..]) =
 
       return (bitxor(b1, b2));
    );
-   my(oneCount = 0);
+   my (oneCount = 0);
    foreach (bits, bit,
 
       oneCount += bit;
