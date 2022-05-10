@@ -10,6 +10,8 @@ not(bit) =
 
       return (eval( strjoin(not(eval( Vec(Str(bit)) ))) ));
    );
+   \\ else it's a vector or matrix
+  
    bit = apply((b) -> !eval(b), bit);
    return (bit);
 }
