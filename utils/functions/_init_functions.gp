@@ -1,7 +1,7 @@
 \\ _init_functions.gp
 
 
-\r _init_functions/fun_system.gp
+\r _utils/functions/fun_system.gp
 
 \r _utils/functions/fun_strings.gp
 \r _utils/functions/fun_console.gp
@@ -21,3 +21,5 @@
 \r _utils/functions/fun_files.gp
 \r _utils/functions/fun_aprox.gp
 \r _utils/functions/fun_alias.gp
+
+\r _utils/functions/fun_physics.gp
