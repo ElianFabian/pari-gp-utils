@@ -8,4 +8,4 @@
 Earth_gravity = -9.81
 G = 6.6743 * 10^-11
 
-EarthDegToMetters = 111319.49166
+OneEarthDegToMetters = 111319.49166
