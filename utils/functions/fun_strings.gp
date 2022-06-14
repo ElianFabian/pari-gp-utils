@@ -38,12 +38,14 @@ strInterpolation(str) =
             strList[i] = ",\""
       )
    );
+
    if (strList[#strList - 1] == "," && strList[#strList] == "\"",
       
       strList[#strList] = "",                              \\ Deletes the final quote mark and the comma in case the string ends with a variable
 
       strList[#strList] = concat(strList[#strList], "\""); \\ Adds the quote mark in case the string ends with a string
    );
+
    inside = strjoin(strList);
    inside = Str("["inside"]");
 
