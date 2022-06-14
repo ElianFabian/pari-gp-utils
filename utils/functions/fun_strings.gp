@@ -38,12 +38,14 @@ strInterpolation(str) =
             strList[i] = ",\""
       )
    );
+
    if (strList[#strList - 1] == "," && strList[#strList] == "\"",
       
       strList[#strList] = "",                              \\ Deletes the final quote mark and the comma in case the string ends with a variable
 
       strList[#strList] = concat(strList[#strList], "\""); \\ Adds the quote mark in case the string ends with a string
    );
+
    inside = strjoin(strList);
    inside = Str("["inside"]");
 
@@ -72,7 +74,7 @@ strStartsWith(str, prefix)={
   prefix=Vec(prefix);
   if(#prefix > #str, return(0));
   for(i=1,#prefix,if(prefix[i]!=str[i], return(0)));
-  return(1);
+  return (1);
 }
 addhelp(strStartsWith, "strStartsWith(str, prefix): returns 1 if str starts with prefix.\nSource: https://rosettacode.org/wiki/String_matching#PARI.2FGP");
 
@@ -87,7 +89,7 @@ strContains(str, inner)={
     );
     if(good, return(i+1))
   );
-  return(0);
+  return (0);
 }
 addhelp(strContains, "strContains(str, inner): returns the position when inner is present in str.\nSource: https://rosettacode.org/wiki/String_matching#PARI.2FGP");
 
@@ -96,7 +98,7 @@ strEndsWith(str, suffix)={
   suffix=Vec(suffix);
   if(#suffix > #str, return(0));
   for(i=1,#suffix,if(suffix[i]!=str[i+#str-#suffix], return(0)));
-  return(1);
+  return (1);
 }
 addhelp(strEndsWith, "strEndsWith(str, suffix): returns 1 if str ends with prefix.\nSource: https://rosettacode.org/wiki/String_matching#PARI.2FGP");
 
