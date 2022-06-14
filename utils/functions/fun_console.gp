@@ -25,13 +25,13 @@ addhelp(setConsoleColors, "setConsoleColors(error = 9, historyNumbers = 13, prom
 setMyConsoleColorsConf() =
 {
     setConsoleColors(
-        COLOR_RED,
-        COLOR_BLUE,
-        COLOR_YELLOW,
-        COLOR_YELLOW,
-        COLOR_CYAN,
-        COLOR_GREEN,
-        COLOR_YELLOW
+        Color_Red,
+        Color_Blue,
+        Color_Yellow,
+        Color_Yellow,
+        Color_Cyan,
+        Color_Green,
+        Color_Yellow
     );
 }
 
