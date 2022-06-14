@@ -13,14 +13,14 @@ P_Tera  = 10^12
 P_Giga  = 10^09
 P_Mega  = 10^6
 P_Kilo  = 10^3
-P_Mili  = 10^-3
-P_Micro = 10^-6
-P_Nano  = 10^-9
-P_Pico  = 10^-12
-P_Femto = 10^-15
-P_Atto  = 10^-18
-P_Zepto = 10^-21
-P_Yocto = 10^-24
+P_Mili  = 10.^-3
+P_Micro = 10.^-6
+P_Nano  = 10.^-9
+P_Pico  = 10.^-12
+P_Femto = 10.^-15
+P_Atto  = 10.^-18
+P_Zepto = 10.^-21
+P_Yocto = 10.^-24
 
 
 SpeedOfLight = 299 792 458
