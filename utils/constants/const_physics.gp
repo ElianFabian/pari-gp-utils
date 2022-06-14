@@ -39,4 +39,4 @@ GravityOfMars  = 3.721
 
 G = 6.6743 * 10^-11
 
-PlacksConstant = 6.626 070 015 * 10^-34
+ConstantOfPlanck = 6.626 070 015 * 10^-34
