@@ -2,7 +2,7 @@
 This is simple set of functions and constants to use in PARI/GP.
 
 
-If the folder "utils" is in the PARI/GP directory to import all the functions and constants use:
+If the folder "utils" is in the PARI/GP directory to import all the functions and constants use the command:
 
 ```
 \r utils/_init.gp
