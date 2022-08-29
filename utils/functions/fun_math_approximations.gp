@@ -1,4 +1,4 @@
-# fun_math_approximations.gp
+// fun_math_approximations.gp
 
 
 
