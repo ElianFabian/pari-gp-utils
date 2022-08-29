@@ -2,4 +2,4 @@
 
 
 
-plasticRatioApprox(n) = 2^(1/n)
+nthRatioApprox(n) = 2^(1/n)

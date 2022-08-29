@@ -106,21 +106,7 @@ toBase(n, b1, b2) =
 }
 addhelp(toBase, "toBase(numb1, b1, b2): turns a number from a given base to another base.");
 
-plasticRatio(n, digitsOfPrecision = 10) =
-{
-    my(currentApprox = 1.1);
-    my(lastApprox = 2^7144831);
-    my(epsilon = 10^-digitsOfPrecision);
-    
-    while(abs(currentApprox - lastApprox) > epsilon,
-
-        lastApprox = currentApprox;
-
-        currentApprox = lastApprox - (lastApprox^n - lastApprox - 1.0)/(n*lastApprox^n - lastApprox)
-    );
-
-    return (currentApprox);
-}
+nthRatio(n) = solve(p=1,2, p^n - p - 1)
 
 isPalindrome(s) =
 {
