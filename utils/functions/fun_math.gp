@@ -122,21 +122,6 @@ plasticRatio(n, digitsOfPrecision = 10) =
     return (currentApprox);
 }
 
-truthTable(P) =
-{
-    my(var = variables(P), t, b);
-    for (i = 0, 2^#var - 1 ,
-        t = eval(P);
-        for (j = 0, #var - 1,
-            b = bittest(i, j);
-            t = subst(t, var[j + 1], b);
-            print1(b)
-        );
-        print(!!t)
-    );
-};
-addhelp(truthTable, "truthTable(P): returns the truth table of the given expression.\nExample:\n\ntruthTable(x+y)\n000\n101\n011\n111");
-
 isPalindrome(s) =
 {
   s = Vec(Str(s));
