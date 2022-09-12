@@ -45,5 +45,5 @@ addhelp(vdist, "vdist(u, v): returns the distance between the given vectors.")
 vdistSq(u, v) = sum(i = 1, #u, (v[i] - u[i])^2)
 addhelp(vdistSq, "vdistSq(u, v): returns the squared distance between the given vectors.")
 
-foreachMap(M, expr = (x, y) -> print(Str(x, ": ", y))) = foreach(M, item, expr(item[1][1], item[1][2]));
-addhelp(foreachMap, "foreachMap(M, {expr}): loops through a map M with an expresion expr of type (x, y) -> {...}, with x as the key and y as the value.\n Example:\n\nloopThroughMap(myMap, (x, y) -> {\n\n\tprint(Str(x, \": \", y));\n})");
+foreachMap(M, expr) = foreach(M, item, expr(item[1][1], item[1][2]));
+addhelp(foreachMap, "foreachMap(M, expr): loops through a map M with an expresion expr of type (k, v) -> {...}, with x as the key and y as the value.\n Example:\n\nloopThroughMap(myMap, (k, v) -> {\n\n\tprint(Str(k, \": \", v));\n})");
