@@ -14,6 +14,7 @@ switch(x, valuesAndCode[..]) =
 }
 addhelp(switch, "switch(x, valuesAndCode[..]): check x and execute the corresponding code.");
 
+
 \\ EXAMPLE:
 \\switch(x, {
 \\    1, ()-> print("one"),
@@ -23,3 +24,33 @@ addhelp(switch, "switch(x, valuesAndCode[..]): check x and execute the correspon
 \\    5, ()-> print("five"),
 \\    ()-> print("default")
 \\})
+
+
+
+getOsName() = {
+  if(system("uname > /dev/null 2>&1") == 0,
+    os = extern("uname");
+    if(os == "Linux",
+      if (system("getprop > /dev/null 2>&1") == 0,
+        return("android")
+      );
+      return("linux")
+    );
+    if(os == "Darwin", return("macOS"));
+    return(os);
+  );
+
+  if(system("ver > nul 2>&1") == 0,
+    return("windows");
+  );
+
+  return("");
+}
+
+
+getAndroidApiLevel() = {
+    if (system("getprop > /dev/null 2>&1") == 0,
+        return(extern("getprop ro.build.version.sdk"));
+    );
+    return(0);
+}
