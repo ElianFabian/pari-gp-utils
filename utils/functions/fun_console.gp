@@ -35,7 +35,7 @@ setMyConsoleColorsConf() =
     );
 }
 
-clear() = system("cls");
+clear() = print("\ec");
 addhelp(clear, "clear(): clears the screen.");
 
 printInterpolation(str[..]) = print(str.strJoinln.strInterpolation);
